@@ -68,7 +68,7 @@ A RAG system works in two main phases: the preparation phase (indexing) and the 
 
 ---
 
-## 2. Limitations of a Naïve RAG Pipeline
+## 2. Limitations of a Naive RAG Pipeline
 
 A basic RAG implementation faces several significant challenges:
 
