@@ -55,3 +55,10 @@ This project requires a **Groq API key**. Get one for free at [console.groq.com]
 ## License
 
 See LICENSE file for details.
+
+---
+
+## Author
+
+**Name**: Jatin Rajani  
+**Email**: jatin.rajani_cs23@gla.ac.in
