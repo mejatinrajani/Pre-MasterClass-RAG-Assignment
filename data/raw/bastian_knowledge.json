@@ -1,0 +1,334 @@
+{
+  "assistant_rules": [
+    "Answer only from retrieved Bastian knowledge chunks.",
+    "Never fabricate information. If information is not present in context, say so clearly.",
+    "Never invent prices, availability, booking links, payment links, inventory, discounts, reservations, policies, facilities, menu items, or services.",
+    "If information is not found, respond with the information_not_found refusal template.",
+    "Suggest contacting Bastian staff for reservations, payment, or availability inquiries.",
+    "Use negative knowledge list to identify out-of-scope topics.",
+    "Every answer must include citations to source documents.",
+    "Do not answer low-confidence queries (confidence < 0.60)."
+  ],
+
+  "supported_intents": [
+    "general_information",
+    "location_query",
+    "timing_query",
+    "entry_policy",
+    "cover_charge_query",
+    "reservation_policy",
+    "dress_code_query",
+    "menu_query",
+    "pricing_query",
+    "signature_dishes",
+    "pool_query",
+    "club_nightlife",
+    "wellness_query",
+    "booking_action",
+    "payment_methods",
+    "identity",
+    "event_query",
+    "dietary_query",
+    "family_policy",
+    "parking_query",
+    "accessibility_query",
+    "pet_policy",
+    "smoking_policy",
+    "photography_policy",
+    "gift_card_query",
+    "membership_query",
+    "history_query"
+  ],
+
+  "source_documents": {
+    "venue_information": {
+      "name": "Bastian Beach Club Venue Information",
+      "path": "documents/venue_information.md",
+      "last_updated": "2026-06-19",
+      "description": "Static venue details, location, description, founders, architect, size, capacity, event spaces, accessibility, parking, policies."
+    },
+    "policies": {
+      "reservation_policy": {
+        "name": "Reservation Policy",
+        "path": "documents/policies/reservation_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Reservation requirements, booking channels, deposit, cancellation, modification, late arrival, no-show, seating preferences."
+      },
+      "entry_and_cover_charge": {
+        "name": "Entry and Cover Charge Policy",
+        "path": "documents/policies/entry_cover_charge.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Age restriction, ID requirements, cover charges, pool access, dress code, entry checks, refusal rights."
+      },
+      "child_and_family_policy": {
+        "name": "Child and Family Policy",
+        "path": "documents/policies/child_family_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Daytime child policy, evening age restriction, kids activities, kids menu."
+      },
+      "pet_policy": {
+        "name": "Pet Policy",
+        "path": "documents/policies/pet_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Pet restrictions, service animal exceptions, penalty for unauthorised pets."
+      },
+      "smoking_policy": {
+        "name": "Smoking Policy",
+        "path": "documents/policies/smoking_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Indoor smoking prohibition, designated outdoor area, fine."
+      },
+      "photography_policy": {
+        "name": "Photography and Drone Policy",
+        "path": "documents/policies/photography_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Personal photography allowance, professional photography permission, drone prohibition."
+      },
+      "parking_policy": {
+        "name": "Parking Policy",
+        "path": "documents/policies/parking_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Valet parking, self-parking, EV charging availability."
+      },
+      "accessibility_policy": {
+        "name": "Accessibility Policy",
+        "path": "documents/policies/accessibility_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Wheelchair access, ramps, accessible restrooms, accessible parking."
+      },
+      "payment_policy": {
+        "name": "Payment Policy",
+        "path": "documents/policies/payment_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Accepted payment methods, foreign currency, split bill, GST, service charge, gift cards, refunds."
+      },
+      "pool_policy": {
+        "name": "Pool Policy",
+        "path": "documents/policies/pool_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Access fee, hours, rules, swimwear, children supervision, lockers, showers."
+      },
+      "wellness_policy": {
+        "name": "Wellness Policy",
+        "path": "documents/policies/wellness_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Wellness offerings, yoga schedule, seasonal timing, registration requirement."
+      }
+    },
+    "menu": {
+      "food_menu": {
+        "name": "Bastian Food Menu",
+        "path": "documents/menu/food_menu.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Starters, sushi, small plates, main courses, desserts, kids menu, dietary options."
+      },
+      "beverage_menu": {
+        "name": "Bastian Beverage Menu",
+        "path": "documents/menu/beverage_menu.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Cocktails, mocktails, wine, champagne, spirits, beer, tea, coffee, fresh juices."
+      },
+      "signature_dishes": {
+        "name": "Signature Dishes",
+        "path": "documents/menu/signature_dishes.pdf",
+        "last_updated": "2026-06-19",
+        "description": "List of signature dishes and their descriptions."
+      }
+    },
+    "events": {
+      "weekly_events": {
+        "name": "Weekly Events Schedule",
+        "path": "documents/events/weekly_events.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Weekly recurring events including DJ nights, brunches, sunset sessions, Arcane Affair."
+      },
+      "seasonal_events": {
+        "name": "Seasonal Events",
+        "path": "documents/events/seasonal_events.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Seasonal events like New Year's Eve Gala, Christmas Brunch."
+      },
+      "event_spaces": {
+        "name": "Event Spaces",
+        "path": "documents/events/event_spaces.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Spaces available for private events, corporate events, weddings, and parties."
+      }
+    },
+    "nightlife": {
+      "nightlife_policy": {
+        "name": "Nightlife and Club Policy",
+        "path": "documents/nightlife/nightlife_policy.pdf",
+        "last_updated": "2026-06-19",
+        "description": "DJ sessions, VIP tables, bottle service, minimum spend, security checks, prohibited substances."
+      }
+    },
+    "timings": {
+      "operational_timings": {
+        "name": "Operational Timings",
+        "path": "documents/timings/operational_timings.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Operating days, hours, sunset slot, party slot, pool hours, wellness hours."
+      }
+    },
+    "history": {
+      "venue_history": {
+        "name": "Venue History",
+        "path": "documents/history/venue_history.pdf",
+        "last_updated": "2026-06-19",
+        "description": "Founders, architect, design inspiration, brand evolution."
+      }
+    }
+  },
+
+  "venue_highlights": {
+    "name": "Bastian Beach Club",
+    "address": "39, Sun-n-Sand, Juhu Beach, Juhu, Mumbai, Maharashtra 400049",
+    "contact": {
+      "phone": "+91 2250 333555",
+      "whatsapp": "+91 89769 53369",
+      "email": "resmanager@bastianhospitality.com",
+      "website": "https://www.bastianhospitality.com/beach-club"
+    },
+    "description": "Mumbai's first all-day beach club. Overlooks Arabian Sea. Designed by Minal Chopra. Open layouts, central pool. Daytime: lounging, brunch, wellness. Evening: sundowners, live DJs, nightlife.",
+    "founders": ["Ranjit Bindra", "Kunal Jani", "Shilpa Shetty"],
+    "architect": "Minal Chopra",
+    "venue_size_sqft": 25000,
+    "seating_capacity": {
+      "total_daily": 1400,
+      "per_seating": 700,
+      "indoor": 400,
+      "outdoor": 300,
+      "poolside": 200,
+      "vip": 50,
+      "cabanas": 8,
+      "private_dining_rooms": 2
+    }
+  },
+
+  "dynamic_info_notes": {
+    "cover_charge": "Subject to change for special events. Check event listings or contact venue.",
+    "holiday_timings": "Varies during public holidays. Contact venue.",
+    "wellness_schedule": "Seasonal (October – March). Contact venue.",
+    "events_calendar": "Contact venue or check social media.",
+    "minimum_spend": "Varies by package, day, and demand. Contact reservations."
+  },
+
+  "negative_knowledge": [
+    "Table availability is not stored.",
+    "Future promotional rates or discounts are not stored.",
+    "Live booking status is not stored.",
+    "Payment links are not stored.",
+    "Reservation modifications are not stored.",
+    "Guest personal data is not stored.",
+    "Real-time inventory is not stored.",
+    "Future pricing or dynamic pricing is not stored.",
+    "The assistant cannot create, modify, cancel, confirm, or manage reservations.",
+    "The assistant has no access to live booking systems, reservation databases, guest records, payment systems, or operational dashboards."
+  ],
+
+  "refusal_templates": {
+    "information_not_found": "I couldn't find that information in the Bastian knowledge base. Please contact Bastian staff at +91 2250 333555 or resmanager@bastianhospitality.com.",
+    "availability_unknown": "Table availability is not available. Please contact reservations at +91 2250 333555.",
+    "pricing_unknown": "I couldn't locate pricing information for that request.",
+    "reservation_action_not_supported": "I cannot create, modify, cancel, confirm, or manage reservations. Please contact reservations at +91 2250 333555.",
+    "inventory_unavailable": "Real-time inventory and availability are not stored.",
+    "live_data_unavailable": "I do not have access to live Bastian systems or operational databases.",
+    "low_confidence": "I'm not confident enough to answer that question based on the available information. Please contact Bastian staff for assistance."
+  },
+
+  "retrieval_config": {
+    "chunking": {
+      "chunk_size": 200,
+      "chunk_overlap": 50,
+      "min_chunk_size": 100,
+      "max_chunk_size": 300,
+      "preserve_semantic_boundaries": true,
+      "source_types": ["venue_information", "policy_document", "menu_document", "event_document", "pricing_document", "faq_document", "operational_document"]
+    },
+    "metadata": {
+      "required_fields": ["intent", "category", "sub_category", "source_type", "source", "last_updated"],
+      "filterable_fields": ["source_type", "category", "intent"]
+    },
+    "retrieval": {
+      "top_k": 10,
+      "similarity_threshold": 0.35,
+      "final_k": 5,
+      "enable_intent_filtering": true,
+      "enable_query_expansion": true,
+      "enable_cross_encoder_reranking": true
+    },
+    "validation": {
+      "enable_answer_validation": true,
+      "enable_context_sufficiency_check": true,
+      "enable_citation_validation": true,
+      "minimum_supporting_chunks": 2,
+      "enable_contradiction_detection": true
+    },
+    "confidence_scoring": {
+      "enabled": true,
+      "threshold_high": 0.80,
+      "threshold_medium": 0.60,
+      "threshold_low": 0.00,
+      "retrieval_weight": 0.4,
+      "intent_weight": 0.2,
+      "chunk_count_weight": 0.2,
+      "reranker_weight": 0.2
+    }
+  },
+
+  "answer_validation_rules": [
+    "Every factual statement must be supported by retrieved chunks.",
+    "Do not answer if supporting context is missing.",
+    "Do not infer values, estimate prices, or create policies not present in context.",
+    "If retrieval confidence is below threshold, refuse.",
+    "If retrieved chunks contradict each other, refuse.",
+    "Never generate booking confirmation numbers or payment URLs.",
+    "Every factual statement must be traceable to retrieved context.",
+    "Every answer must include at least one citation.",
+    "Pricing answers must cite pricing documents.",
+    "Reservation answers must cite reservation policy documents.",
+    "Event answers must cite event documents.",
+    "Menu answers must cite menu documents."
+  ],
+
+  "citation_rules": {
+    "format": "source_type:source_name (last_updated)",
+    "required_for": ["pricing", "menu", "reservation_policy", "timings", "events"],
+    "examples": [
+      "menu_document:food_menu.pdf (2026-06-19)",
+      "policy_document:reservation_policy.pdf (2026-06-19)",
+      "event_document:weekly_events.pdf (2026-06-19)"
+    ]
+  },
+
+  "rag_guardrails": {
+    "require_grounded_answers": true,
+    "allow_estimation": false,
+    "allow_assumptions": false,
+    "allow_world_knowledge_without_context": false,
+    "require_retrieved_context": true,
+    "fallback_to_refusal": true,
+    "minimum_supporting_chunks": 2,
+    "enable_contradiction_detection": true,
+    "enable_hallucination_scoring": true,
+    "confidence_threshold": 0.75
+  },
+
+  "retrieval_pipeline": {
+    "steps": [
+      "User Query",
+      "Intent Classification",
+      "Metadata Filtering",
+      "Query Expansion",
+      "Vector Search",
+      "Cross Encoder Reranking",
+      "Context Sufficiency Check",
+      "Answer Generation",
+      "Answer Validation",
+      "Citation Validation",
+      "Confidence Scoring", 
+      "Final Response"
+    ]
+  }
+}

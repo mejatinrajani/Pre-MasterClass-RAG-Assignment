@@ -1,0 +1,13 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ChromaDB
+data/vector_db/
+
+# Virtual environments
+venv/
+.venv/
