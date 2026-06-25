@@ -1,0 +1,7 @@
+chromadb
+groq
+neo4j
+python-dotenv
+rank-bm25
+sentence-transformers
+streamlit
